@@ -131,7 +131,6 @@
         <h1 class="text-danger border-dark">Trending <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16">
                 <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z" />
             </svg></h1>
-        <h4 class="text-light bg-warning p-2 text-center">T-Shirt & Shirt</h4>
 
         <!-- start modal.................................................... -->
 
@@ -142,7 +141,11 @@
         <div class="row">
             <div class="col-md-12 d-flex col-sm-12">
                 <!-- modal end......................... -->
-                <?php foreach ($Products as $Product) { ?>
+                <?php foreach ($Products as $Product) {
+                    if (count($Product) >=4) {
+                        echo "<br>";
+                   
+                    ?>
                     <div class="col-lg-3 col-md-6" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         <a href="show.php?id=<?= $Product['id'] ?>">
                             <div class="card">
@@ -162,85 +165,13 @@
 
 
                     </div>
-                <?php } ?>
-            </div>
-        </div>
-        <h2 class="text-light bg-warning p-2 text-center">Sneakers</h2>
-        <div class="row">
-            <div class="col-md-12 d-flex">
-                <?php
-                if ($Product['product_category'] = "w90rj") {
-                    foreach ($Products as $Product) {
-                        //$Product ="SELECT FROM product_info WHERE product_category=w90rj";
-                ?>
-                        <div class="col-lg-3 col-md-6" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            <a href="show.php?id=<?= $Product['id'] ?>">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <img class="fs-card-img" src="../../assets/uploads/<?= $Product['picture'] ?>" alt="" width="100%" height="100%">
-                                        <h3><?= $Product['product_category'] ?></h3>
-                                        <p><?= $Product['product_description'] ?></p>
-                                        <h3 class="text-danger"><?= $Product['product_price'] ?></h3>
-                                        <div class="bg-success text-light btn" id="liveToastBtn">SHOP NOW
-                                            <!--  -->
-                                        </div>
-                                        <!--  -->
-
-                                    </div>
-                                </div>
-                            </a>
-
-
-                        </div>
-                <?php
-
-                    }
-                } else {
-                    echo "<h2>No product in this category!!</h2>";
+                <?php 
                 }
-                ?>
+            }
+                 ?>
             </div>
         </div>
-        <h2 class="text-light bg-warning p-2 text-center">Electrical & Macanical</h2>
 
-        <div class="row">
-            <div class="col-md-12 d-flex">
-
-                <?php
-                if ($Product['product_category'] == "Electricital & Eachicinal") {
-                    foreach ($Products as $Product) {
-
-                ?>
-                        <div class="col-lg-3 col-md-6" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            <a href="show.php?id=<?= $Product['id'] ?>">
-                                <div class="card ">
-                                    <div class="card-body text-center h-80">
-                                        <img class="fs-card-img" src="../../assets/uploads/<?= $Product['picture'] ?>" alt="" width="100%" height="100%">
-                                        <h3><?= $Product['product_category'] ?></h3>
-                                        <p><?= $Product['product_description'] ?></p>
-                                        <h3 class="text-danger"><?= $Product['product_price'] ?></h3>
-                                        <div class="bg-success text-light btn" id="liveToastBtn">SHOP NOW
-                                            <!--  -->
-                                        </div>
-                                        <!--  -->
-
-                                    </div>
-                                </div>
-                            </a>
-
-
-                        </div>
-                    <?php
-
-                    }
-                } else {
-                    ?>
-                    <h2 class="text-center">No porduct in this category</h2>
-                <?php
-                }
-                ?>
-            </div>
-        </div>
         <!-- sticky bottom////////// -->
         <div class=" position-fixed bottom-0 end-0">
             <div class="card">

@@ -63,7 +63,7 @@
             <a href=""><i class="bx bxl-instagram-alt text-danger"></i></a>
             <a href=""><i class="bx bxl-twitter px-2 mx-5 text-danger"></i></a>
             <a href=""><i class="bx bxl-facebook text-danger mb-4"></i></a>
-            <a href="login.html"><button type="submit" class="btn btn-secondary w-100 my-2">Log Out</button></a>
+            <a href="./../forntend/index.php"><button type="submit" class="btn btn-secondary w-100 my-2">Log Out</button></a>
         </span>
        
     </div>

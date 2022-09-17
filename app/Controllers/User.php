@@ -120,9 +120,9 @@ class User
                 $_SESSION['errors']['email'] = 'Invalid email format';
               }
     
-            if (empty($data['contact_no'])) {
-                $_SESSION['errors']['contact_no'] = 'Required';
-            }
+            // if (empty($data['contact_no'])) {
+            //     $_SESSION['errors']['contact_no'] = 'Required';
+            // }
     
             if (empty($data['gender'])) {
                 $_SESSION['errors']['gender'] = 'Required';
@@ -220,12 +220,45 @@ class User
     public function update(array $data, int $id)
     {
         try {
-            $sql = "UPDATE  user_info SET name=:c_name, user_id=:c_id  WHERE id=:r_id";
+
+            $uploaddir = './../../assets/uploads/';
+        $uppercase = preg_match('@[A-Z]@', $data['password']);
+        $lowercase = preg_match('@[a-z]@', $data['password']);
+        $number    = preg_match('@[0-9]@', $data['password']);
+        $specialchars = preg_match('@[^\w]@', $data['password']);
+
+
+        // $uploadfile = $uploaddir . $_FILES['picture']['name'];
+
+        $allowed_exttension=array('gif','png','jpg','jpeg');
+        $actuaImageName = $_FILES['picture']['name'];
+        $formattedImageName = date('Y-m-d') . time() . $actuaImageName;
+        $uploadfile = $uploaddir . $formattedImageName;
+        $uploadfiletocheck = $uploaddir . $_FILES['picture']['name'];
+      //  die($formattedImageName);
+         move_uploaded_file($_FILES['picture']['tmp_name'], $uploadfile);
+            $sql = "UPDATE  user_info SET name=:c_name, user_id=:c_id,user_type=:u_type,gender=:u_gender
+            ,picture=:u_pic
+              WHERE id=:r_id";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([
                 'r_id' => $id,
                 'c_name' => $data['name'],
-                'c_id' => $data['user_id']
+                'c_id' => $data['user_id'],
+                'u_type'=>$data['user_type'],
+                'u_gender'=>$data['gender'],
+                'u_pic'=> $formattedImageName,
+
+
+            //     $sql = "UPDATE  user_info SET name=:c_name, user_id=:c_id
+            //   WHERE id=:r_id";
+            // $stmt = $this->conn->prepare($sql);
+            // $stmt->execute([
+            //     'r_id' => $id,
+            //     'c_name' => $data['name'],
+            //     'c_id' => $data['user_id'],
+                
+
             ]);
 
             //  $_SESSION['students'][$this->findIndex($id)] = $data;
