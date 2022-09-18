@@ -29,7 +29,7 @@
 
 
     ?>
-    <div class="container p-2">
+    <div class="container p-2 bg-light">
 
         <?php include_once "nav-header.php"; ?>
         <?php
@@ -138,14 +138,14 @@
 
 
         <div class="row">
-            <div class="col-md-12 d-flex col-sm-12">
+            <div class="col-md-12 d-flex col-sm-12 row">
                 <!-- modal end......................... -->
                 <?php foreach ($Products as $Product) {
                     if (count($Product) >=4) {
                         echo "<br>";
                    
                     ?>
-                    <div class="col-lg-3 col-md-6" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="col-lg-3 col-md-6 my-2 h-200" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         <a href="show.php?id=<?= $Product['id'] ?>">
                             <div class="card">
                                 <div class="card-body text-center">

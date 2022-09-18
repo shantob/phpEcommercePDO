@@ -12,8 +12,8 @@ $categoryToShow = $categoryShow->details($_GET['id']);
 ?>
 
 
-<?php include ('./cat_header.php'); ?>
 
+<?php include ('./../header/header.php'); ?>
 
 
 

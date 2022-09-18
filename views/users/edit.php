@@ -70,7 +70,7 @@ $User_Info = $UserObj->details($_GET['id']);
                                 <div class="col-md-6">
                                     <div class="form-group">
 
-                                        <label class="mx-4 control-label" for="name">User Type </label>
+                                    <label class="mx-4 control-label" for="name">User Type </label>
                                         <select id="user_type" class="form-control" name="user_type" value="<?= $_SESSION['old']['user_type'] ?? null ?>">
                                             <option value="">--select--</option>
 
@@ -105,21 +105,21 @@ $User_Info = $UserObj->details($_GET['id']);
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="col-md-4 control-label mt-4" for="online_date">User Gender</label>
+                                    
+                                        
 
+                                        Male : <input <?php if ($User_Info['gender'] == "Male") {
+                                                            echo "checked";
+                                                        } ?> type="radio" name="gender" value="Male" value="<?= $_SESSION['old']['gender'] ?? null ?>" />
+                                        Female : <input <?php if ($User_Info['gender'] == "Female") {
+                                                            echo "checked";
+                                                        } ?> type="radio" name="gender" value="Female" value="<?= $_SESSION['old']['gender'] ?? null ?>" /><br>
 
-
-                                    Male : <input <?php if ($User_Info['gender'] == "Male") {
-                                                        echo "checked";
-                                                    } ?> type="radio" name="gender" value="Male" value="<?= $_SESSION['old']['gender'] ?? null ?>" />
-                                    Female : <input <?php if ($User_Info['gender'] == "Female") {
-                                                        echo "checked";
-                                                    } ?> type="radio" name="gender" value="Female" value="<?= $_SESSION['old']['gender'] ?? null ?>" /><br>
-
-                                    <br>
+                                        <br>
+                                    </div>
                                 </div>
                             </div>
-                </div>
-
+                
 
 
 
@@ -142,7 +142,7 @@ $User_Info = $UserObj->details($_GET['id']);
                         </div>
                     </div>
                 </div>
-
+             
                 <div class="form-group">
                     <div class="col-md-12 p-2 justify-content-center">
                         <button id="singlebutton" name="singlebutton" class="btn btn-primary text-center px-5 m-2">update </button>

@@ -42,6 +42,19 @@ class Product
         //    die();
         return $data;
     }
+    public function catWise(string $name)
+    {
+
+
+        $sql = "SELECT * FROM product_info where product_category=$name";
+        $stmt = $this->conn->query($sql);
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        //    echo "<pre>";
+        //    print_r($data);
+        //    die();
+        return $data;
+    }
     // public function categoryShow($P_category)
     // {
     //     $sql = "SELECT * FROM product_info WHERE product_category=$P_category";
@@ -194,7 +207,8 @@ class Product
             //     'c_id' => $data['product_id']
 
 
-                $sql = "UPDATE  product_info SET name=:c_name, product_id=:c_id ,product_price=:p_price,
+            
+            $sql = "UPDATE  product_info SET name=:c_name, product_id=:c_id ,product_price=:p_price,product_category=:p_cat,
             product_description=:p_description,percentage_discount=:p_discount
              WHERE id=:r_id";
             $stmt = $this->conn->prepare($sql);
@@ -202,10 +216,24 @@ class Product
                 'r_id' => $id,
                 'c_name' => $data['name'],
                 'c_id' => $data['product_id'],
+                'p_cat'=>  $data['product_category'],
                 'p_price' => $data['product_price'],
                 'p_description' => $data['product_description'],
                 'p_discount' => $data['percentage_discount']
             ]);
+
+            //     $sql = "UPDATE  product_info SET name=:c_name, product_id=:c_id ,product_price=:p_price,
+            // product_description=:p_description,percentage_discount=:p_discount
+            //  WHERE id=:r_id";
+            // $stmt = $this->conn->prepare($sql);
+            // $stmt->execute([
+            //     'r_id' => $id,
+            //     'c_name' => $data['name'],
+            //     'c_id' => $data['product_id'],
+            //     'p_price' => $data['product_price'],
+            //     'p_description' => $data['product_description'],
+            //     'p_discount' => $data['percentage_discount']
+            // ]);
 
             //  $_SESSION['students'][$this->findIndex($id)] = $data;
             $_SESSION['message'] = 'Successfully Updated';

@@ -13,7 +13,8 @@ if (isset($_SESSION['errors'])) {
 
 
 
-<?php include ('./cat_header.php'); ?>
+
+<?php include ('./../header/header.php'); ?>
         <!-- Top Nav -->
 
         <!--End Top Nav -->

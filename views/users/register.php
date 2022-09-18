@@ -46,7 +46,7 @@ if (isset($_SESSION['errors'])) {
 
 
                     <a href="./index.php">List</a>
-        <form action="./store.php" method="post"  enctype="multipart/form-data">
+        <form action=".../store.php" method="post"  enctype="multipart/form-data">
            <!-- <input type="text" name="id" placeholder="Enter Student Id"> <br>
             <input type="text" name="name" placeholder="Enter Student Name">
             <button>Add</button> -->

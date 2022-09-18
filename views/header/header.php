@@ -37,11 +37,11 @@
                 <i class="bx bxs-dashboard"></i>
                 <span class="mx-2">Product Add</span>
             </li></a>
-            <a href="./index.php"><li href="" class="nav-link">
+            <a href="./../categories/"><li href="" class="nav-link">
                 <i class="bx bx-conversation"></i>
                 <span class="mx-2">Category</span>
             </li></a>
-           <a href="./create.php"><li href="" class="nav-link">
+           <a href="./../categories/create.php"><li href="" class="nav-link">
                 <i class="bx bx-conversation"></i>
                 <span class="mx-2">Category Add</span>
             </li></a> 
@@ -53,7 +53,7 @@
                 <i class="bx bx-conversation"></i>
                 <span class="mx-2">Invoice</span>
             </li></a>
-            <a href="userdetels.html"><li  class="nav-link">
+            <a href="./../users/"><li  class="nav-link">
                 <i class="bx bx-user-check"></i>
                 <span class="mx-2">User Detels</span>
             </li></a>

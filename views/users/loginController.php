@@ -9,11 +9,7 @@ include_once './../../vendor/autoload.php';
 
 use Project\Controllers\User;
 
-$UserUpdate = new User();
+$Users = new User();
 
-echo '<pre>';
-print_r($_POST);
-
-$UserUpdate->update($_POST, $_GET['id']);
-
-header('Location: ./index.php');
+$Users->matching($_POST);
+ 

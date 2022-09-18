@@ -18,9 +18,12 @@ body{
   justify-content: center;
   background-color: #EFEFEF;
 }
-
+.card-body{
+  background-color: grey;
+}
 .card{
-  border-radius: 25px;
+  border-radius: 5px !important;
+  height: 200px;
   background-color: #FFF;
 }
 li {

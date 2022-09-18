@@ -43,11 +43,11 @@ if (isset($_SESSION['errors'])) {
               <div class="row g-0">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8 ">
-                  <div class="card">
-                    <div class="card-body" style="background-color: tomato; border-radius: 15px;">
+                  <div class="card text-light">
+                    <div class="card-body bg-info " style=" border-radius: 15px;">
                       <div class="p-5">
                         <h3 class="fw-normal mb-5 text-center h1" style="color: #f5f5f5;">Your Infomation</h3>
-                        <form action="./store.php" method="post" class="text-dark" enctype="multipart/form-data">
+                        <form action="./store.php" method="post" class="text-light" enctype="multipart/form-data">
                           <!-- <input type="text" name="id" placeholder="Enter User Id"> <br>
             <input type="text" name="name" placeholder="Enter User Name">
             <button>Add</button> -->
@@ -90,11 +90,11 @@ if (isset($_SESSION['errors'])) {
 
 
 
-                           <label for="email">Type Email</label>
+                          <label for="email">Type Email</label>
                           <input type="textbox" name="email" class="form-control" placeholder="Enter a Email ID" value="<?= $_SESSION['old']['email'] ?? null ?>" /><br>
 
                           <small class="text-danger"><?= $_SESSION['errors']['email'] ?? null ?></small><br>
- 
+
                           <label for="contact_on">Type Your Phone Number</label> <br>
                           <input type="textbox" class="form-control" name="contact_on" placeholder="Enter a Contact No" value="<?= $_SESSION['old']['contact_no'] ?? null ?>" />
 

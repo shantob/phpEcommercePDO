@@ -94,9 +94,9 @@ class Select
         // }
 
         $stmt->execute(['id' => $di]);
-        echo "<pre>";
-        print_r($stmt);
-        die();
+        // echo "<pre>";
+        // print_r($stmt);
+        // die();
         $_SESSION['massage'] = "Successfully Deleted!!!";
     }
     public function findIndes(int $id): int

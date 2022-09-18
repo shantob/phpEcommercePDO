@@ -29,8 +29,8 @@
 
     
    
-<?php include ('./cat_header.php'); ?>
 
+<?php include ('./../header/header.php'); ?>
 
 
 

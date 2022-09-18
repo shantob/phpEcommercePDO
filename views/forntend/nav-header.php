@@ -27,7 +27,7 @@
                             <div class="col-lg-8 col-md-4">
                                 <div class="">
                                     <button class="mt-2 rounded-bottom hover-overlay text-center text-dark  border-light p-2" type="submit">
-                                        <!-- <a class="text-warning fs-5" href=""> Sign in /</a> -->
+                                        <a class="text-warning fs-5" href="./../users/login.php"> Sign in /</a>
                                         <a class="text-danger fs-5" href="./../users/create.php">Sign Up</a>
                                     </button>
                                 </div>
@@ -41,15 +41,17 @@
     </div>
 </header>
 
-<nav class="navbar navbar-expand-lg navbar sticky-top " style="background-color:  #ff9900;">
+<nav class="navbar navbar-expand-lg navbar sticky-top bg-info ">
     <div class="container-fluid">
         <div class="dropdown show">
             <button class="btn text-light me-3 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <h3 class="">CATEGORY</h3>
             </button>
-            <ul class="dropdown-menu dropdown-menu-light w-100 bg-warning">
-            <?php foreach ($categories as $category) { ?>
-                <li><a class="dropdown-item text-center bg-secondary w-100 mt-2 p-2 text-light" href="categories.php?id=<?= $category['name'] ?>"> <ul> <?= $category['name'] ?></ul></a></li>
+            <ul class="dropdown-menu dropdown-menu-light w-100">
+                <?php foreach ($categories as $category) { ?>
+                    <li><a class="dropdown-item text-center bg-secondary rounded-pill h5 w-100 mt-2 p-2 border-redius text-light" href="categories.php?id=<?= $category['name'] ?>">
+                            <ul> <?= $category['name'] ?></ul>
+                        </a></li>
                 <?php } ?>
             </ul>
         </div>

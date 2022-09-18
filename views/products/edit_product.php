@@ -160,7 +160,7 @@ $categories = $categorytofind->index();
 
 
                                 <!-- Text input-->
-                                <div class="col-md-6">
+                                <!-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="col-md-4 control-label mt-4" for="online_date">ONLINE DATE</label>
                                         <div class="col-md-12 p-4">
@@ -170,7 +170,7 @@ $categories = $categorytofind->index();
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
 
 
