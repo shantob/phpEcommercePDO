@@ -49,7 +49,7 @@
             </button>
             <ul class="dropdown-menu dropdown-menu-light w-100 bg-warning">
             <?php foreach ($categories as $category) { ?>
-                <li><a class="dropdown-item text-center bg-secondary w-100 mt-2 p-2 text-light" href="index.php?id=<?= $category['id'] ?>"> <ul> <?= $category['name'] ?></ul></a></li>
+                <li><a class="dropdown-item text-center bg-secondary w-100 mt-2 p-2 text-light" href="categories.php?id=<?= $category['name'] ?>"> <ul> <?= $category['name'] ?></ul></a></li>
                 <?php } ?>
             </ul>
         </div>
@@ -73,14 +73,14 @@
                         </button>
                     </li>
                 </a>
-                <a href="contact.html">
+                <a href="contact.php">
                     <li class="nav-item">
                         <button class="btn btn-light me-3" type="button" data-bs-auto-close="true" aria-expanded="false">
                             Contact
                         </button>
                     </li>
                 </a>
-                <a href="about.html">
+                <a href="about.php">
                     <li class="nav-item ">
                         <button class="btn btn-light me-3" type="button" data-bs-auto-close="true" aria-expanded="false">
                             About

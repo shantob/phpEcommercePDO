@@ -57,7 +57,7 @@
                     foreach ($categories as $category) { ?>
 
                         <div class="col-lg-3 col-md-6 mt-2 p-2 text-center">
-                            <a href="show.php?id=<?= $category['id'] ?>" class="btn btn-tag btn-rounded bg-success text-light" data-mdb-close="true">
+                            <a href="categories.php?id=<?= $category['name'] ?>" class="btn btn-tag btn-rounded bg-success text-light" data-mdb-close="true">
                                 <i class="fas fa-layer-group me-2 hover-overlay hover-zoom hover-shadow ripple"></i>
                                 <?= $category['name'] ?></a>
                         </div>
